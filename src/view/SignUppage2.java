@@ -26,39 +26,25 @@ public class SignUppage2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        jLabel7 = new javax.swing.JLabel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        Email_Field = new javax.swing.JTextField();
+        Username_Field = new javax.swing.JTextField();
+        Password_Field = new javax.swing.JTextField();
+        Phone_Field = new javax.swing.JTextField();
+        Address_Field = new javax.swing.JTextField();
+        Gender_Field = new javax.swing.JTextField();
+        BloodGroup_Field = new javax.swing.JTextField();
+        MedicalHistory_Field = new javax.swing.JTextField();
+        SignUp_Button = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/background.jpeg"))); // NOI18N
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel2.setText("jLabel2");
-
-        jLabel3.setText("jLabel3");
-
-        jLabel4.setText("jLabel4");
-
-        jLabel5.setText("jLabel5");
-
-        jToggleButton1.setText("jToggleButton1");
 
         jDesktopPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -70,59 +56,122 @@ public class SignUppage2 extends javax.swing.JFrame {
         jLabel8.setText("SignUp");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 134, 80, -1));
 
-        jTextField1.setText("giriprabin238@gmail.com");
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 179, -1, -1));
-
-        jTextField2.setText("Username");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+        Email_Field.setText("Email");
+        Email_Field.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                Email_FieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                Email_FieldFocusLost(evt);
             }
         });
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 229, 153, -1));
-
-        jTextField3.setText("Password");
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 279, 153, -1));
-
-        jTextField4.setText("Phone no.");
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 329, 153, -1));
-
-        jTextField5.setText("Address");
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 179, 153, -1));
-
-        jTextField6.setText("Gender");
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 229, 153, -1));
-
-        jTextField7.setText("Blood Group");
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        Email_Field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                Email_FieldActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 279, 153, -1));
+        jPanel1.add(Email_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 179, 150, -1));
 
-        jTextField8.setText("Medical History");
-        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 329, 153, -1));
-
-        jButton1.setText("Sign Up");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        Username_Field.setText("Username");
+        Username_Field.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                Username_FieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                Username_FieldFocusLost(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 385, -1, -1));
+        Username_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Username_FieldActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Username_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 229, 153, -1));
+
+        Password_Field.setText("Password");
+        Password_Field.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                Password_FieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                Password_FieldFocusLost(evt);
+            }
+        });
+        jPanel1.add(Password_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 279, 153, -1));
+
+        Phone_Field.setText("Phone no.");
+        Phone_Field.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                Phone_FieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                Phone_FieldFocusLost(evt);
+            }
+        });
+        jPanel1.add(Phone_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 329, 153, -1));
+
+        Address_Field.setText("Address");
+        Address_Field.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                Address_FieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                Address_FieldFocusLost(evt);
+            }
+        });
+        jPanel1.add(Address_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 179, 153, -1));
+
+        Gender_Field.setText("Gender");
+        Gender_Field.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                Gender_FieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                Gender_FieldFocusLost(evt);
+            }
+        });
+        jPanel1.add(Gender_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 229, 153, -1));
+
+        BloodGroup_Field.setText("Blood Group");
+        BloodGroup_Field.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                BloodGroup_FieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                BloodGroup_FieldFocusLost(evt);
+            }
+        });
+        BloodGroup_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BloodGroup_FieldActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BloodGroup_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 279, 153, -1));
+
+        MedicalHistory_Field.setText("Medical History");
+        MedicalHistory_Field.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                MedicalHistory_FieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                MedicalHistory_FieldFocusLost(evt);
+            }
+        });
+        jPanel1.add(MedicalHistory_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 329, 153, -1));
+
+        SignUp_Button.setText("Sign Up");
+        SignUp_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SignUp_ButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(SignUp_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 385, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Blood Link logo (2).jpeg"))); // NOI18N
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 130, 30));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/background.jpeg"))); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 460));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Blood Link logo (2).jpeg"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 120, 20));
-
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/background.jpeg"))); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 460));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 450));
 
         jDesktopPane1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 6, 625, 455));
 
@@ -130,58 +179,148 @@ public class SignUppage2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(357, 357, 357)
-                .addComponent(jToggleButton1)
-                .addGap(195, 195, 195)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(114, 114, 114)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(jLabel5))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(jToggleButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void SignUp_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUp_ButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_SignUp_ButtonActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void BloodGroup_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BloodGroup_FieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_BloodGroup_FieldActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void Username_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Username_FieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_Username_FieldActionPerformed
+
+    private void Email_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Email_FieldFocusGained
+        // TODO add your handling code here:if
+        if (Email_Field.getText().equals("Email")) {
+        Email_Field.setText("");
+    }
+    }//GEN-LAST:event_Email_FieldFocusGained
+
+    private void Email_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Email_FieldFocusLost
+        // TODO add your handling code here:
+        if (Email_Field.getText().isEmpty()) {
+        Email_Field.setText("Email");
+    }
+    }//GEN-LAST:event_Email_FieldFocusLost
+
+    private void Email_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Email_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Email_FieldActionPerformed
+
+    private void Username_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Username_FieldFocusGained
+        // TODO add your handling code here:
+       if (Username_Field.getText().equals("Username")) {
+        Username_Field.setText("");
+    }
+    }//GEN-LAST:event_Username_FieldFocusGained
+
+    private void Username_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Username_FieldFocusLost
+        // TODO add your handling code here:
+       if (Username_Field.getText().isEmpty()) {
+        Username_Field.setText("Username");
+    }
+    }//GEN-LAST:event_Username_FieldFocusLost
+
+    private void Password_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Password_FieldFocusGained
+        // TODO add your handling code here:
+         if (Password_Field.getText().equals("Password")) {
+        Password_Field.setText("");
+    }
+    }//GEN-LAST:event_Password_FieldFocusGained
+
+    private void Password_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Password_FieldFocusLost
+        // TODO add your handling code here:
+         if (Password_Field.getText().isEmpty()) {
+        Password_Field.setText("Password");
+    }
+    }//GEN-LAST:event_Password_FieldFocusLost
+
+    private void Phone_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Phone_FieldFocusGained
+        // TODO add your handling code here:
+         if (Phone_Field.getText().equals("Phone no.")) {
+        Phone_Field.setText("");
+    }
+    }//GEN-LAST:event_Phone_FieldFocusGained
+
+    private void Phone_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Phone_FieldFocusLost
+        // TODO add your handling code here:
+         if (Phone_Field.getText().isEmpty()) {
+        Phone_Field.setText("Phone no.");
+    }
+    }//GEN-LAST:event_Phone_FieldFocusLost
+
+    private void Address_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Address_FieldFocusGained
+        // TODO add your handling code here:
+          if (Address_Field.getText().equals("Address")) {
+        Address_Field.setText("");
+    }
+    }//GEN-LAST:event_Address_FieldFocusGained
+
+    private void Address_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Address_FieldFocusLost
+        // TODO add your handling code here:
+         if (Address_Field.getText().isEmpty()) {
+        Address_Field.setText("Address");
+    }
+    }//GEN-LAST:event_Address_FieldFocusLost
+
+    private void Gender_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Gender_FieldFocusGained
+        // TODO add your handling code here:
+         if (Gender_Field.getText().equals("Gender")) {
+        Gender_Field.setText("");
+    }
+    }//GEN-LAST:event_Gender_FieldFocusGained
+
+    private void Gender_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Gender_FieldFocusLost
+        // TODO add your handling code here:
+         if (Gender_Field.getText().isEmpty()) {
+        Gender_Field.setText("Gender");
+    }
+    }//GEN-LAST:event_Gender_FieldFocusLost
+
+    private void BloodGroup_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_BloodGroup_FieldFocusGained
+        // TODO add your handling code here:
+        if (BloodGroup_Field.getText().equals("Blood Group")) {
+        BloodGroup_Field.setText("");
+    }
+    }//GEN-LAST:event_BloodGroup_FieldFocusGained
+
+    private void BloodGroup_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_BloodGroup_FieldFocusLost
+        // TODO add your handling code here:
+        if (BloodGroup_Field.getText().isEmpty()) {
+        BloodGroup_Field.setText("Blood Group");
+    }
+    }//GEN-LAST:event_BloodGroup_FieldFocusLost
+
+    private void MedicalHistory_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_MedicalHistory_FieldFocusGained
+        // TODO add your handling code here:
+        if (MedicalHistory_Field.getText().equals("Medical History")) {
+        MedicalHistory_Field.setText("");
+    }
+    }//GEN-LAST:event_MedicalHistory_FieldFocusGained
+
+    private void MedicalHistory_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_MedicalHistory_FieldFocusLost
+        // TODO add your handling code here
+        if (MedicalHistory_Field.getText().isEmpty()) {
+        MedicalHistory_Field.setText("Medical History");
+    }
+    }//GEN-LAST:event_MedicalHistory_FieldFocusLost
 
     /**
      * @param args the command line arguments
@@ -219,26 +358,20 @@ public class SignUppage2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField Address_Field;
+    private javax.swing.JTextField BloodGroup_Field;
+    private javax.swing.JTextField Email_Field;
+    private javax.swing.JTextField Gender_Field;
+    private javax.swing.JTextField MedicalHistory_Field;
+    private javax.swing.JTextField Password_Field;
+    private javax.swing.JTextField Phone_Field;
+    private javax.swing.JButton SignUp_Button;
+    private javax.swing.JTextField Username_Field;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }
