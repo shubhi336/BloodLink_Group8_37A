@@ -3,19 +3,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
+import Dao.UserDao;
+import model.User;
+import javax.swing.JOptionPane;
 /**
  *
  * @author ASUS
  */
-public class SignUppage2 extends javax.swing.JFrame {
+public final class SignUppage2 extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form SignUppage2
      */
     public SignUppage2() {
         initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -196,6 +200,37 @@ public class SignUppage2 extends javax.swing.JFrame {
 
     private void SignUp_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUp_ButtonActionPerformed
         // TODO add your handling code here:
+       System.out.println("Button Clicked");
+
+    String email = Email_Field.getText();
+    String username = Username_Field.getText();
+    String password = Password_Field.getText();
+    String phone = Phone_Field.getText();
+
+    System.out.println("Collected user data");
+
+    try {
+        User user = new User(email, username, password, phone);
+        UserDao userDao = new UserDao();
+
+        System.out.println("Attempting registration");
+        boolean isRegistered = userDao.registerUser(user);
+
+        if (isRegistered) {
+            System.out.println("User registered successfully");
+            JOptionPane.showMessageDialog(this, "Registration successful!");
+            this.dispose();
+        } else {
+            System.out.println("User already exists or registration failed");
+            JOptionPane.showMessageDialog(this, "User already exists or registration failed.");
+        }
+
+    } catch (Exception e) {
+        System.out.println("Error: " + e.getMessage());
+        e.printStackTrace();
+    }
+        
+        
     }//GEN-LAST:event_SignUp_ButtonActionPerformed
 
     private void BloodGroup_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BloodGroup_FieldActionPerformed
@@ -350,10 +385,8 @@ public class SignUppage2 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new SignUppage2().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new SignUppage2().setVisible(true);
         });
     }
 
@@ -374,4 +407,21 @@ public class SignUppage2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+// 👇 Add this inside SignUppage2 class
+public boolean isPasswordSecure(String password) {
+    if (password.length() < 8) return false;
+
+    boolean hasUpper = false, hasLower = false, hasDigit = false, hasSpecial = false;
+
+    for (char ch : password.toCharArray()) {
+        if (Character.isUpperCase(ch)) hasUpper = true;
+        else if (Character.isLowerCase(ch)) hasLower = true;
+        else if (Character.isDigit(ch)) hasDigit = true;
+        else if ("!@#$%^&*()_+-=[]{}|;':\",.<>?/`~".contains(Character.toString(ch))) hasSpecial = true;
+    }
+
+    return hasUpper && hasLower && hasDigit && hasSpecial;
 }
+
+}
+
