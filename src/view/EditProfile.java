@@ -32,82 +32,49 @@ public class EditProfile extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        Name_Field = new javax.swing.JLabel();
-        Number_Field = new javax.swing.JLabel();
-        Gender_Field = new javax.swing.JLabel();
-        Blood_Field = new javax.swing.JLabel();
-        Age_Field = new javax.swing.JLabel();
-        Email_Field = new javax.swing.JLabel();
-        Address_Field = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        Gender_Field = new javax.swing.JComboBox<>();
+        Blood_Field = new javax.swing.JComboBox<>();
+        Age_Field = new javax.swing.JTextField();
+        Name_Field = new javax.swing.JTextField();
+        Email_Field = new javax.swing.JTextField();
+        Number_Field = new javax.swing.JTextField();
+        Address_Field = new javax.swing.JTextField();
         Cancel_Field = new javax.swing.JButton();
         Save_Field = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Edit Profile");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 6, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, -1, -1));
 
-        Name_Field.setForeground(new java.awt.Color(255, 255, 255));
-        Name_Field.setText("Full Name");
-        Name_Field.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                Name_FieldFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                Name_FieldFocusLost(evt);
+        Gender_Field.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
+        Gender_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Gender_FieldActionPerformed(evt);
             }
         });
-        getContentPane().add(Name_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 37, -1, -1));
+        getContentPane().add(Gender_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 170, -1));
 
-        Number_Field.setForeground(new java.awt.Color(255, 255, 255));
-        Number_Field.setText("Phone Number");
-        Number_Field.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                Number_FieldFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                Number_FieldFocusLost(evt);
+        Blood_Field.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A−", "B+", "B−", "AB+", "AB−", "O+", "O−" }));
+        Blood_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Blood_FieldActionPerformed(evt);
             }
         });
-        getContentPane().add(Number_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 189, -1, -1));
+        getContentPane().add(Blood_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 80, -1));
 
-        Gender_Field.setForeground(new java.awt.Color(255, 255, 255));
-        Gender_Field.setText("Gender");
-        Gender_Field.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                Gender_FieldFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                Gender_FieldFocusLost(evt);
-            }
-        });
-        getContentPane().add(Gender_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 93, -1, -1));
-
-        Blood_Field.setForeground(new java.awt.Color(255, 255, 255));
-        Blood_Field.setText("Blood Group");
-        Blood_Field.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                Blood_FieldFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                Blood_FieldFocusLost(evt);
-            }
-        });
-        getContentPane().add(Blood_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 127, -1, -1));
-
-        Age_Field.setForeground(new java.awt.Color(255, 255, 255));
-        Age_Field.setText("Age");
+        Age_Field.setText("Your Age");
         Age_Field.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 Age_FieldFocusGained(evt);
@@ -116,10 +83,25 @@ public class EditProfile extends javax.swing.JFrame {
                 Age_FieldFocusLost(evt);
             }
         });
-        getContentPane().add(Age_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 62, -1, -1));
+        getContentPane().add(Age_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 170, -1));
 
-        Email_Field.setForeground(new java.awt.Color(255, 255, 255));
-        Email_Field.setText("Email");
+        Name_Field.setText("Your Name");
+        Name_Field.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                Name_FieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                Name_FieldFocusLost(evt);
+            }
+        });
+        Name_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Name_FieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Name_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 170, -1));
+
+        Email_Field.setText("Your Email");
         Email_Field.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 Email_FieldFocusGained(evt);
@@ -128,10 +110,25 @@ public class EditProfile extends javax.swing.JFrame {
                 Email_FieldFocusLost(evt);
             }
         });
-        getContentPane().add(Email_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 161, -1, -1));
+        getContentPane().add(Email_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 170, -1));
 
-        Address_Field.setForeground(new java.awt.Color(255, 255, 255));
-        Address_Field.setText("Address");
+        Number_Field.setText("Your Phone");
+        Number_Field.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                Number_FieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                Number_FieldFocusLost(evt);
+            }
+        });
+        Number_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Number_FieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Number_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 170, -1));
+
+        Address_Field.setText("Your Address");
         Address_Field.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 Address_FieldFocusGained(evt);
@@ -140,43 +137,7 @@ public class EditProfile extends javax.swing.JFrame {
                 Address_FieldFocusLost(evt);
             }
         });
-        getContentPane().add(Address_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 223, -1, -1));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 90, 86, -1));
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A−", "B+", "B−", "AB+", "AB−", "O+", "O−" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 124, 86, -1));
-
-        jTextField1.setText("Your Age");
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 62, 86, -1));
-
-        jTextField2.setText("Your Name");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 34, 86, -1));
-
-        jTextField3.setText("Your Email");
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 158, 86, -1));
-
-        jTextField4.setText("Your Phone");
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 186, 86, -1));
-
-        jTextField5.setText("Your Address");
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 220, -1, -1));
+        getContentPane().add(Address_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 170, -1));
 
         Cancel_Field.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Cancel_Field.setText("Cancel");
@@ -185,7 +146,7 @@ public class EditProfile extends javax.swing.JFrame {
                 Cancel_FieldActionPerformed(evt);
             }
         });
-        getContentPane().add(Cancel_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 260, -1, -1));
+        getContentPane().add(Cancel_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 80, 30));
 
         Save_Field.setBackground(new java.awt.Color(102, 204, 255));
         Save_Field.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -196,144 +157,183 @@ public class EditProfile extends javax.swing.JFrame {
                 Save_FieldActionPerformed(evt);
             }
         });
-        getContentPane().add(Save_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 260, -1, -1));
+        getContentPane().add(Save_Field, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 80, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 410, 350));
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Full Name");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Age");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Gender");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Blood Group");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Email");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Phone Number");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Address");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 560, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void Gender_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Gender_FieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_Gender_FieldActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void Blood_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Blood_FieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_Blood_FieldActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void Name_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Name_FieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void Name_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Name_FieldFocusGained
-    Name_Field.setBackground(Color.YELLOW);
-    if (Name_Field.getText().equals("Your Name")) {
-        Name_Field.setText("");
-    }
-    }//GEN-LAST:event_Name_FieldFocusGained
-
-    private void Name_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Name_FieldFocusLost
-         Name_Field.setBackground(Color.WHITE);
-    if (Name_Field.getText().trim().isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Name cannot be empty.");
-    }
-    }//GEN-LAST:event_Name_FieldFocusLost
-
-    private void Age_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Age_FieldFocusGained
-        Age_Field.setBackground(Color.YELLOW);
-    }//GEN-LAST:event_Age_FieldFocusGained
-
-    private void Age_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Age_FieldFocusLost
-        Age_Field.setBackground(Color.WHITE);
-    String ageText = Age_Field.getText().trim();
-    try {
-        int age = Integer.parseInt(ageText);
-        if (age <= 0 || age > 150) {
-            JOptionPane.showMessageDialog(this, "Please enter a valid age.");
-        }
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Age must be a number.");
-    }
-    }//GEN-LAST:event_Age_FieldFocusLost
-
-    private void Gender_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Gender_FieldFocusGained
-        Gender_Field.setBackground(Color.YELLOW);
-    }//GEN-LAST:event_Gender_FieldFocusGained
-
-    private void Gender_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Gender_FieldFocusLost
-        Gender_Field.setBackground(Color.WHITE);
-    if (Gender_Field.getText().trim().isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Gender cannot be empty.");
-    }
-    }//GEN-LAST:event_Gender_FieldFocusLost
-
-    private void Blood_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Blood_FieldFocusGained
-        Blood_Field.setBackground(Color.YELLOW);
-    }//GEN-LAST:event_Blood_FieldFocusGained
-
-    private void Blood_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Blood_FieldFocusLost
-         Blood_Field.setBackground(Color.WHITE);
-    if (Blood_Field.getText().trim().isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Blood group cannot be empty.");
-    }
-    }//GEN-LAST:event_Blood_FieldFocusLost
-
-    private void Email_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Email_FieldFocusGained
-        Email_Field.setBackground(Color.YELLOW);
-    }//GEN-LAST:event_Email_FieldFocusGained
-
-    private void Email_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Email_FieldFocusLost
-         Email_Field.setBackground(Color.WHITE);
-    String email = Email_Field.getText().trim();
-    if (!email.matches("^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")) {
-        JOptionPane.showMessageDialog(this, "Enter a valid email address.");
-    }
-    }//GEN-LAST:event_Email_FieldFocusLost
-
-    private void Number_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Number_FieldFocusGained
-        Number_Field.setBackground(Color.YELLOW);
-    }//GEN-LAST:event_Number_FieldFocusGained
-
-    private void Number_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Number_FieldFocusLost
-        Number_Field.setBackground(Color.WHITE);
-    String phone = Number_Field.getText().trim();
-    if (!phone.matches("\\d{10}")) {
-        JOptionPane.showMessageDialog(this, "Enter a valid 10-digit phone number.");
-    }
-    }//GEN-LAST:event_Number_FieldFocusLost
-
-    private void Address_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Address_FieldFocusGained
-        Address_Field.setBackground(Color.YELLOW);
-    }//GEN-LAST:event_Address_FieldFocusGained
-
-    private void Address_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Address_FieldFocusLost
-         Address_Field.setBackground(Color.WHITE);
-    if (Address_Field.getText().trim().isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Address cannot be empty.");
-    }
-    }//GEN-LAST:event_Address_FieldFocusLost
+    }//GEN-LAST:event_Name_FieldActionPerformed
 
     private void Save_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save_FieldActionPerformed
-    String name = Name_Field.getText().trim();
-    String age = Age_Field.getText().trim();
-    String gender = Gender_Field.getText().trim();
-    String bloodGroup = Blood_Field.getText().trim();
-    String email = Email_Field.getText().trim();
-    String phone = Number_Field.getText().trim();
-    String address = Address_Field.getText().trim();
+    String name = Name_Field.getText();
+    String email = Email_Field.getText();
+    String phone = Number_Field.getText();
+    String address = Address_Field.getText();
+    String age = Age_Field.getText();
 
-    if (name.isEmpty() || age.isEmpty() || gender.isEmpty() || bloodGroup.isEmpty()
-        || email.isEmpty() || phone.isEmpty() || address.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Please fill in all fields.");
+    // Validation
+    if (name.equals("Enter your full name") || name.trim().isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Please enter your full name.");
         return;
     }
-    System.out.println("Saved Details:");
-    System.out.println("Name: " + name);
-    System.out.println("Age: " + age);
-    System.out.println("Gender: " + gender);
-    System.out.println("Blood Group: " + bloodGroup);
-    System.out.println("Email: " + email);
-    System.out.println("Phone: " + phone);
-    System.out.println("Address: " + address);
 
-    JOptionPane.showMessageDialog(this, "Data saved successfully!");
+    if (email.equals("Email") || email.trim().isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Please enter a valid email.");
+        return;
+    }
+
+    if (phone.equals("Phone Number") || phone.trim().isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Please enter your phone number.");
+        return;
+    }
+
+    if (address.equals("Enter your address") || address.trim().isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Please enter your address.");
+        return;
+    }
+
+    if (age.equals("Enter your age") || age.trim().isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Please enter your age.");
+        return;
+    }
+
+    // Check if age is a number
+    try {
+        int ageInt = Integer.parseInt(age);
+        if (ageInt <= 0) {
+            JOptionPane.showMessageDialog(null, "Please enter a valid age.");
+            return;
+        }
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(null, "Age must be a number.");
+        return;
+    }
+
+    // Simulate saving
+    JOptionPane.showMessageDialog(null, "Details Saved Successfully:\n\n"
+            + "Name: " + name + "\n"
+            + "Email: " + email + "\n"
+            + "Phone: " + phone + "\n"
+            + "Address: " + address + "\n"
+            + "Age: " + age);
     }//GEN-LAST:event_Save_FieldActionPerformed
 
     private void Cancel_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cancel_FieldActionPerformed
     System.out.println("Application closed by user.");
     System.exit(0);
     }//GEN-LAST:event_Cancel_FieldActionPerformed
+
+    private void Number_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Number_FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Number_FieldActionPerformed
+
+    private void Email_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Email_FieldFocusGained
+         if (Email_Field.getText().equals("Your Email")) {
+        Email_Field.setText("");
+    }
+    }//GEN-LAST:event_Email_FieldFocusGained
+
+    private void Email_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Email_FieldFocusLost
+         if (Email_Field.getText().isEmpty()) {
+        Email_Field.setText("Your Email");
+    }
+    }//GEN-LAST:event_Email_FieldFocusLost
+
+    private void Number_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Number_FieldFocusGained
+        if (Number_Field.getText().equals("Your Phone")) {
+        Number_Field.setText("");
+    }
+    }//GEN-LAST:event_Number_FieldFocusGained
+
+    private void Number_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Number_FieldFocusLost
+          if (Number_Field.getText().isEmpty()) {
+        Number_Field.setText("Your Phone");
+    }
+    }//GEN-LAST:event_Number_FieldFocusLost
+
+    private void Address_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Address_FieldFocusGained
+          if (Address_Field.getText().equals("Your Address")) {
+        Address_Field.setText("");
+    }
+    }//GEN-LAST:event_Address_FieldFocusGained
+
+    private void Address_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Address_FieldFocusLost
+         if (Address_Field.getText().isEmpty()) {
+        Address_Field.setText("Your Address");
+    }
+    }//GEN-LAST:event_Address_FieldFocusLost
+
+    private void Name_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Name_FieldFocusGained
+           if (Name_Field.getText().equals("Your Name")) {
+        Name_Field.setText("");
+    }
+    }//GEN-LAST:event_Name_FieldFocusGained
+
+    private void Name_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Name_FieldFocusLost
+         if (Name_Field.getText().isEmpty()) {
+        Name_Field.setText("Your Name");
+    }
+    }//GEN-LAST:event_Name_FieldFocusLost
+
+    private void Age_FieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Age_FieldFocusGained
+           if (Age_Field.getText().equals("Your Age")) {
+        Age_Field.setText("");
+    }
+    }//GEN-LAST:event_Age_FieldFocusGained
+
+    private void Age_FieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Age_FieldFocusLost
+          if (Age_Field.getText().isEmpty()) {
+        Age_Field.setText("Your Age");
+    }
+    }//GEN-LAST:event_Age_FieldFocusLost
 
     /**
      * @param args the command line arguments
@@ -361,23 +361,23 @@ public class EditProfile extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Address_Field;
-    private javax.swing.JLabel Age_Field;
-    private javax.swing.JLabel Blood_Field;
+    private javax.swing.JTextField Address_Field;
+    private javax.swing.JTextField Age_Field;
+    private javax.swing.JComboBox<String> Blood_Field;
     private javax.swing.JButton Cancel_Field;
-    private javax.swing.JLabel Email_Field;
-    private javax.swing.JLabel Gender_Field;
-    private javax.swing.JLabel Name_Field;
-    private javax.swing.JLabel Number_Field;
+    private javax.swing.JTextField Email_Field;
+    private javax.swing.JComboBox<String> Gender_Field;
+    private javax.swing.JTextField Name_Field;
+    private javax.swing.JTextField Number_Field;
     private javax.swing.JButton Save_Field;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     // End of variables declaration//GEN-END:variables
 }
