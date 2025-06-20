@@ -102,7 +102,7 @@ public class CampaignDetails extends javax.swing.JFrame {
         EmergencyRequests.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         EmergencyRequests.setText("Emergency Requests");
         EmergencyRequests.setBorder(null);
-        getContentPane().add(EmergencyRequests, new org.netbeans.lib.awtextra.AbsoluteConstraints(464, 46, -1, -1));
+        getContentPane().add(EmergencyRequests, new org.netbeans.lib.awtextra.AbsoluteConstraints(464, 46, 120, -1));
 
         DonatePage.setBackground(new java.awt.Color(255, 0, 0));
         DonatePage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -386,6 +386,7 @@ public class CampaignDetails extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new CampaignDetails().setVisible(true);
             }

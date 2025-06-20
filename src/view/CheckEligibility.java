@@ -15,6 +15,36 @@ public class CheckEligibility extends javax.swing.JFrame {
      */
     public CheckEligibility() {
         initComponents();
+        buttonGroup1.add(Yes1);
+        buttonGroup1.add(No1);
+        
+        buttonGroup2.add(Yes2);
+        buttonGroup2.add(No2);
+        
+        buttonGroup3.add(Yes3);
+        buttonGroup3.add(No3);
+        
+        buttonGroup4.add(Yes4);
+        buttonGroup4.add(No4);
+       
+        buttonGroup5.add(Yes5);
+        buttonGroup5.add(No5);
+        
+        buttonGroup6.add(Yes6);
+        buttonGroup6.add(No6);
+        
+        buttonGroup7.add(Yes7);
+        buttonGroup7.add(No7);
+        
+        buttonGroup8.add(Yes8);
+        buttonGroup8.add(No8);
+        
+        buttonGroup9.add(Yes9);
+        buttonGroup9.add(No9);
+        
+        buttonGroup10.add(Yes10);
+        buttonGroup10.add(No10);
+ 
     }
 
     /**
@@ -30,6 +60,12 @@ public class CheckEligibility extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
         buttonGroup4 = new javax.swing.ButtonGroup();
+        buttonGroup5 = new javax.swing.ButtonGroup();
+        buttonGroup6 = new javax.swing.ButtonGroup();
+        buttonGroup7 = new javax.swing.ButtonGroup();
+        buttonGroup8 = new javax.swing.ButtonGroup();
+        buttonGroup9 = new javax.swing.ButtonGroup();
+        buttonGroup10 = new javax.swing.ButtonGroup();
         BloodLinkIcon = new javax.swing.JLabel();
         HomePage = new javax.swing.JButton();
         BloodStoriesPage = new javax.swing.JButton();
@@ -372,7 +408,7 @@ public class CheckEligibility extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jPanel2);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 134, -1, 330));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, 330));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -415,10 +451,6 @@ public class CheckEligibility extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ProfileIconActionPerformed
 
-    private void Yes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Yes1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Yes1ActionPerformed
-
     private void Yes6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Yes6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Yes6ActionPerformed
@@ -427,11 +459,31 @@ public class CheckEligibility extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Yes8ActionPerformed
 
+    private void Yes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Yes1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Yes1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(CheckEligibility.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(CheckEligibility.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(CheckEligibility.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(CheckEligibility.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -455,10 +507,8 @@ public class CheckEligibility extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CheckEligibility().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new CheckEligibility().setVisible(true);
         });
     }
 
@@ -505,9 +555,15 @@ public class CheckEligibility extends javax.swing.JFrame {
     private javax.swing.JRadioButton Yes8;
     private javax.swing.JRadioButton Yes9;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup10;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.ButtonGroup buttonGroup5;
+    private javax.swing.ButtonGroup buttonGroup6;
+    private javax.swing.ButtonGroup buttonGroup7;
+    private javax.swing.ButtonGroup buttonGroup8;
+    private javax.swing.ButtonGroup buttonGroup9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
