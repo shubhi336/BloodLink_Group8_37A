@@ -27,6 +27,7 @@ public class SignUppage2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel7 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -41,8 +42,12 @@ public class SignUppage2 extends javax.swing.JFrame {
         SignUp_Button = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/background.jpeg"))); // NOI18N
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -168,10 +173,16 @@ public class SignUppage2 extends javax.swing.JFrame {
         jPanel1.add(SignUp_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 385, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Blood Link logo (2).jpeg"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 130, 30));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 130, 30));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/background.jpeg"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 450));
+
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, -1, -1));
+
+        jLabel2.setText("jLabel2");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 60, -1, -1));
 
         jDesktopPane1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 6, 625, 455));
 
@@ -367,7 +378,10 @@ public class SignUppage2 extends javax.swing.JFrame {
     private javax.swing.JTextField Phone_Field;
     private javax.swing.JButton SignUp_Button;
     private javax.swing.JTextField Username_Field;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
