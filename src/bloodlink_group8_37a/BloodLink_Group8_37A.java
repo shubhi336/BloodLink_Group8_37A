@@ -4,6 +4,9 @@
  */
 package bloodlink_group8_37a;
 
+import view.SignUp;
+import view.Dashboard;
+
 /**
  *
  * @author VICTUS
@@ -14,7 +17,10 @@ public class BloodLink_Group8_37A {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       
+
+Dashboard dashboardpage=new Dashboard();
+dashboardpage.setVisible(true);
     }
     
 }

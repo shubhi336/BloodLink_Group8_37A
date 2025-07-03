@@ -408,7 +408,7 @@ public class CheckEligibility extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jPanel2);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, 330));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 870, 330));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
