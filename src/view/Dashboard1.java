@@ -186,7 +186,7 @@ public class Dashboard1 extends javax.swing.JFrame {
         getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(329, 505, -1, -1));
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/introduction.png"))); // NOI18N
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 103, 264, -1));
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 264, -1));
         getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 271, 43, -1));
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/latest.png"))); // NOI18N

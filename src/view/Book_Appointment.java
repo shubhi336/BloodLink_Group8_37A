@@ -59,8 +59,6 @@ public class Book_Appointment extends javax.swing.JFrame {
         Cancel_Field = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         Location = new javax.swing.JTextField();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -226,8 +224,6 @@ public class Book_Appointment extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Location, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 210, -1));
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 210, -1));
-        getContentPane().add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 210, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -412,8 +408,6 @@ String name = Name_Field.getText();
     private javax.swing.JButton Save_Field;
     private javax.swing.JTextField Time_Field;
     private javax.swing.JComboBox<String> jComboBox2;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
