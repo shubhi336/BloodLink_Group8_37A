@@ -1,89 +1,82 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Database;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.*;
+import java.sql.Statement;
+
+public class MySql implements Database {
+
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "IT$universe31";
+    private static final String URL = "jdbc:mysql://localhost:3306/bloodlink?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC";
 
 
-/**
- *
- * @author VICTUS
- */
-public class MySql implements Database{
+    public static void main(String[] args) {
+        // Optional: test the connection here
+        Connection conn = getConnection();
+        if (conn != null) {
+            System.out.println("Connection test passed.");
+        } else {
+            System.out.println("Connection test failed.");
+        }
+    }
+
+    public static Connection getConnection() {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver"); // Load the MySQL JDBC Driver
+            Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            System.out.println("✅ getConnection(): Connected successfully");
+            return connection;
+        } catch (ClassNotFoundException e) {
+            System.out.println("❌ JDBC Driver not found: " + e.getMessage());
+        } catch (SQLException e) {
+            System.out.println("❌ getConnection(): Connection failed - " + e.getMessage());
+        }
+        return null;
+    }
+
+    public static void closeConnection(Connection con) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
     @Override
     public Connection openConnection() {
-        try{
-            String username="root";
-            String password="Sos@20620426";
-            String database="testdatabase";           
-            Connection connection;
-            connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/"+ database, username, password);
-                
-            if(connection==null){
-                System.out.println("Database connection fail");
-            }else{
-                System.out.println("Database connection success");
-            }
-            return connection;
-    }
-        catch(SQLException e){
-            System.out.println(e);
-            return null;
-        }
+        return getConnection();
     }
 
     @Override
     public void CloseConnection(Connection conn) {
-        try{
-            if (conn != null && !conn.isClosed()){
-            conn.close();
-            System.out.println("Connection close");
+        try {
+            if (conn != null && !conn.isClosed()) {
+                conn.close();
+                System.out.println("🔌 Connection closed");
             }
+        } catch (SQLException e) {
+            System.out.println("❌ Close Error: " + e.getMessage());
+        }
     }
-        catch(SQLException e){
-            System.out.println(e);
-            
-        }}
 
     @Override
     public ResultSet runQuery(Connection conn, String query) {
-        try{
-            Statement stmp = conn.createStatement();
-            ResultSet result = stmp.executeQuery(query);
-            return result;
-        } catch (SQLException e){
-            System.out.println(e);
+        try {
+            Statement stmt = conn.createStatement();
+            return stmt.executeQuery(query);
+        } catch (SQLException e) {
+            System.out.println("❌ Query Error: " + e.getMessage());
             return null;
         }
     }
 
     @Override
     public int executeUpdate(Connection conn, String query) {
-        try{
-            Statement stmp= conn.createStatement();
-            int result = stmp.executeUpdate(query);
-            return result;
-        } catch(SQLException e){
-            System.out.println(e);
+        try {
+            Statement stmt = conn.createStatement();
+            return stmt.executeUpdate(query);
+        } catch (SQLException e) {
+            System.out.println("❌ Update Error: " + e.getMessage());
             return -1;
         }
     }
-    
 }
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author VICTUS
- */
-

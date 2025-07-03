@@ -7,7 +7,6 @@ import java.sql.PreparedStatement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.*;
-import view.SignUp;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -25,7 +24,6 @@ public class UserDao {
     public void signin(User user) {
         Connection conn = mysql.openConnection();
         String sql = "INSERT INTO users (email, username, password, phone, address, gender, blood_group, medical_history) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-
 
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, user.getEmail());
@@ -69,13 +67,9 @@ public class UserDao {
     PreparedStatement pst = null;
 
     try {
-        con = mysql.openConnection();
-        if (con == null) {
-            System.err.println("Connection failed. Cannot proceed with registration.");
-            return false;
-        }
-
+        con = mysql.openConnection();  // Use  instance method for consistency
         String sql = "INSERT INTO users (email, username, password, phone, address, gender, blood_group, medical_history) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
         pst = con.prepareStatement(sql);
         pst.setString(1, user.getEmail());
         pst.setString(2, user.getUsername());
