@@ -42,15 +42,15 @@ public class Donate extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         Appointment_Field = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        Home_Field = new javax.swing.JButton();
+        Stories_Field = new javax.swing.JButton();
+        Campaign_Field = new javax.swing.JButton();
+        Bank_Field = new javax.swing.JButton();
+        Emergency_Field = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        Request_Field = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,35 +97,65 @@ public class Donate extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Home");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Home_Field.setText("Home");
+        Home_Field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                Home_FieldActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Blood Stories");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        Stories_Field.setText("Blood Stories");
+        Stories_Field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                Stories_FieldActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Campaign Details");
+        Campaign_Field.setText("Campaign Details");
+        Campaign_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Campaign_FieldActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("Blood Stories");
+        Bank_Field.setText("Blood Bank");
+        Bank_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bank_FieldActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("Emergency Request");
+        Emergency_Field.setText("Emergency Request");
+        Emergency_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Emergency_FieldActionPerformed(evt);
+            }
+        });
 
         jButton7.setBackground(new java.awt.Color(255, 0, 51));
         jButton7.setText("Donate");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
-        jButton8.setBackground(new java.awt.Color(255, 0, 51));
-        jButton8.setText("Request");
+        Request_Field.setBackground(new java.awt.Color(255, 0, 51));
+        Request_Field.setText("Request");
+        Request_Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Request_FieldActionPerformed(evt);
+            }
+        });
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/bloodlink-icon.jpg"))); // NOI18N
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Profile_icon.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Profile_icon.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -154,9 +184,9 @@ public class Donate extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2)
+                                .addComponent(Home_Field)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3)))
+                                .addComponent(Stories_Field)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
@@ -171,17 +201,17 @@ public class Donate extends javax.swing.JFrame {
                                     .addComponent(Appointment_Field, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton4)
+                                .addComponent(Campaign_Field)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton5)
+                                .addComponent(Bank_Field)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton6)
+                                .addComponent(Emergency_Field)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton8)
+                                .addComponent(Request_Field)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel17))))
+                                .addComponent(jButton1))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(357, 357, 357)
                         .addComponent(jLabel1)))
@@ -194,16 +224,16 @@ public class Donate extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jButton1)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel17))
+                                .addComponent(Home_Field)
+                                .addComponent(Stories_Field)
+                                .addComponent(Campaign_Field)
+                                .addComponent(Bank_Field)
+                                .addComponent(Emergency_Field))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton2)
-                                .addComponent(jButton3)
-                                .addComponent(jButton4)
-                                .addComponent(jButton5)
-                                .addComponent(jButton6))
-                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Request_Field))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -248,13 +278,17 @@ public class Donate extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void Home_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Home_FieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        Dashboard dashboard=new Dashboard();
+         dashboard.setVisible(true);
+    }//GEN-LAST:event_Home_FieldActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void Stories_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stories_FieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        Blood_Stories stories=new Blood_Stories();
+         stories.setVisible(true);
+    }//GEN-LAST:event_Stories_FieldActionPerformed
 
     private void Appointment_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Appointment_FieldActionPerformed
         // TODO add your handling code here:
@@ -262,6 +296,40 @@ public class Donate extends javax.swing.JFrame {
         bookappointment.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Appointment_FieldActionPerformed
+
+    private void Campaign_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Campaign_FieldActionPerformed
+        // TODO add your handling code here:
+        CampaignDetails campaign=new CampaignDetails();
+        campaign.setVisible(true);
+    }//GEN-LAST:event_Campaign_FieldActionPerformed
+
+    private void Bank_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bank_FieldActionPerformed
+        // TODO add your handling code here:
+        BloodBanks banks=new BloodBanks();
+        banks.setVisible(true);
+    }//GEN-LAST:event_Bank_FieldActionPerformed
+
+    private void Emergency_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Emergency_FieldActionPerformed
+        // TODO add your handling code here:
+        EmergencyRequest emergency=new EmergencyRequest();
+        emergency.setVisible(true);
+    }//GEN-LAST:event_Emergency_FieldActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void Request_FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Request_FieldActionPerformed
+        // TODO add your handling code here:
+        request Request=new request();
+        Request.setVisible(true);
+    }//GEN-LAST:event_Request_FieldActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Profile profile=new Profile();
+        profile.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -331,13 +399,14 @@ public class Donate extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Appointment_Field;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton Bank_Field;
+    private javax.swing.JButton Campaign_Field;
+    private javax.swing.JButton Emergency_Field;
+    private javax.swing.JButton Home_Field;
+    private javax.swing.JButton Request_Field;
+    private javax.swing.JButton Stories_Field;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -346,7 +415,6 @@ public class Donate extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
