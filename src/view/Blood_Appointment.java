@@ -29,8 +29,8 @@ public class Blood_Appointment extends JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        Submit_Button = new javax.swing.JButton();
+        Cancel_Button = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -78,11 +78,21 @@ public class Blood_Appointment extends JFrame {
         jLabel2.setText("Blood Donation Appintments");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
 
-        jButton1.setText("Submit");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, -1, -1));
+        Submit_Button.setText("Submit");
+        Submit_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Submit_ButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Submit_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, -1, -1));
 
-        jButton2.setText("Cancel");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 450, -1, -1));
+        Cancel_Button.setText("Cancel");
+        Cancel_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cancel_ButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Cancel_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 450, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/bd.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -90,6 +100,16 @@ public class Blood_Appointment extends JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Submit_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_ButtonActionPerformed
+        // TODO add your handling code here:
+        handleSubmitAction();
+    }//GEN-LAST:event_Submit_ButtonActionPerformed
+
+    private void Cancel_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cancel_ButtonActionPerformed
+        // TODO add your handling code here:
+        loadAppointments();
+    }//GEN-LAST:event_Cancel_ButtonActionPerformed
 
     public void loadAppointments(){
         Vector<String> columnNames=new Vector<>();
@@ -105,11 +125,58 @@ public class Blood_Appointment extends JFrame {
         DefaultTableModel model=new DefaultTableModel(data, columnNames){
             @Override
             public boolean isCellEditable(int row, int column){
-                return column==4 || column==6;
+               if (column ==5){
+                   return true;
+               }else if(column ==6){
+                   Object status=getValueAt(row,5);
+                   return status!=null && status.toString().equalsIgnoreCase("Completed");
+               }
+               return false;
             }
         };
         jTable1.setModel(model);
+        
+        String[] statusOptions ={"Pending","Completed","Cancelled"};
+        JComboBox<String> statusCombo=new JComboBox<>(statusOptions);
+        jTable1.getColumnModel().getColumn(5).setCellEditor(new DefaultCellEditor(statusCombo));
     }    
+    private void handleSubmitAction() {
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        int rowCount = model.getRowCount();
+        int updatedCount = 0;
+        
+        
+
+        for (int i = 0; i < rowCount; i++) {
+            try {
+                int id = (int) model.getValueAt(i, 0);
+                String status = model.getValueAt(i, 5).toString();
+                int quantity = 0;
+                
+                String bloodGroup=model.getValueAt(i,4).toString();
+
+                if (status.equalsIgnoreCase("Completed")) {
+                    Object qtyObj = model.getValueAt(i, 6);
+                    if (qtyObj == null || qtyObj.toString().isEmpty()) {
+                        JOptionPane.showMessageDialog(this,
+                            "Quantity is required for Completed status (Row " + (i + 1) + ")");
+                        return;
+                    }
+                    quantity = Integer.parseInt(qtyObj.toString());
+                }
+
+                boolean success = BloodAppointmentDao.saveOrUpdateDonationInfo(id, status, quantity,bloodGroup);
+                if (success) updatedCount++;
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Error processing row " + (i + 1));
+            }
+        }
+
+        JOptionPane.showMessageDialog(this, updatedCount + " records updated successfully.");
+        loadAppointments(); // refresh table
+    }
     /**
      * @param args the command line arguments
      */
@@ -120,8 +187,8 @@ public class Blood_Appointment extends JFrame {
 
 }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton Cancel_Button;
+    private javax.swing.JButton Submit_Button;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
