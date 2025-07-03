@@ -53,7 +53,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
@@ -85,6 +84,11 @@ public class Dashboard extends javax.swing.JFrame {
         CampaignDetailspage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         CampaignDetailspage.setText("Campaign Details");
         CampaignDetailspage.setBorder(null);
+        CampaignDetailspage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampaignDetailspageActionPerformed(evt);
+            }
+        });
         getContentPane().add(CampaignDetailspage, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 28, -1, -1));
 
         BloodBanksPage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -100,6 +104,11 @@ public class Dashboard extends javax.swing.JFrame {
         EmergencyRequestsPage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         EmergencyRequestsPage.setText("Emergency Requests");
         EmergencyRequestsPage.setBorder(null);
+        EmergencyRequestsPage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmergencyRequestsPageActionPerformed(evt);
+            }
+        });
         getContentPane().add(EmergencyRequestsPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(502, 28, -1, -1));
 
         DonatePage.setBackground(new java.awt.Color(255, 0, 0));
@@ -117,9 +126,14 @@ public class Dashboard extends javax.swing.JFrame {
         RequestPage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         RequestPage.setForeground(new java.awt.Color(255, 255, 255));
         RequestPage.setText("Request");
+        RequestPage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RequestPageActionPerformed(evt);
+            }
+        });
         getContentPane().add(RequestPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 21, -1, 32));
 
-        ProfilePage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Profile_icon.png"))); // NOI18N
+        ProfilePage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Profile_icon.png"))); // NOI18N
         ProfilePage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ProfilePageActionPerformed(evt);
@@ -127,7 +141,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
         getContentPane().add(ProfilePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(816, 21, 39, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bloodlink-icon.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Blood Link logo (2).jpeg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 16, 123, -1));
 
@@ -184,18 +198,17 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel18.setText("Paradise Inn.");
         getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(329, 505, -1, -1));
 
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/introduction.png"))); // NOI18N
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/introduction.png"))); // NOI18N
         getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 103, 264, -1));
-        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 271, 43, -1));
 
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/latest.png"))); // NOI18N
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/latest.png"))); // NOI18N
         jLabel21.setText("jLabel21");
         getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(504, 337, 300, -1));
 
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/slogan.png"))); // NOI18N
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/slogan.png"))); // NOI18N
         getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 170, 176, 231));
 
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/white.jpg"))); // NOI18N
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/white.jpg"))); // NOI18N
         getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 560));
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
@@ -204,23 +217,52 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void BloodStoriesPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BloodStoriesPageActionPerformed
         // TODO add your handling code here:
+        Blood_Stories bloodstories=new Blood_Stories();
+         bloodstories.setVisible(true);
     }//GEN-LAST:event_BloodStoriesPageActionPerformed
 
     private void BloodBanksPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BloodBanksPageActionPerformed
         // TODO add your handling code here:
+        BloodBanks bloodbanks=new BloodBanks();
+         bloodbanks.setVisible(true);
     }//GEN-LAST:event_BloodBanksPageActionPerformed
 
     private void DonatePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DonatePageActionPerformed
         // TODO add your handling code here:
+        Donate donate=new Donate();
+         donate.setVisible(true);
     }//GEN-LAST:event_DonatePageActionPerformed
 
     private void ProfilePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfilePageActionPerformed
         // TODO add your handling code here:
+        Profile profile=new Profile();
+         profile.setVisible(true);
+        
     }//GEN-LAST:event_ProfilePageActionPerformed
 
     private void homepageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homepageActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_homepageActionPerformed
+
+    private void CampaignDetailspageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampaignDetailspageActionPerformed
+        // TODO add your handling code here:
+        CampaignDetails campaign=new CampaignDetails();
+         campaign.setVisible(true);
+        
+    }//GEN-LAST:event_CampaignDetailspageActionPerformed
+
+    private void EmergencyRequestsPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmergencyRequestsPageActionPerformed
+        // TODO add your handling code here:
+        EmergencyRequest emergency=new EmergencyRequest();
+         emergency.setVisible(true);
+    }//GEN-LAST:event_EmergencyRequestsPageActionPerformed
+
+    private void RequestPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RequestPageActionPerformed
+        // TODO add your handling code here:
+        request Request=new request();
+         Request.setVisible(true);
+    }//GEN-LAST:event_RequestPageActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,7 +319,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;

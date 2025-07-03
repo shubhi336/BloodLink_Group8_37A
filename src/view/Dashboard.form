@@ -73,6 +73,9 @@
           <Border info="null"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CampaignDetailspageActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="319" y="28" width="-1" height="-1"/>
@@ -108,6 +111,9 @@
           <Border info="null"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmergencyRequestsPageActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="502" y="28" width="-1" height="-1"/>
@@ -149,6 +155,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Request"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RequestPageActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="720" y="21" width="-1" height="32"/>
@@ -158,7 +167,7 @@
     <Component class="javax.swing.JButton" name="ProfilePage">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/Profile_icon.png"/>
+          <Image iconType="3" name="/Image/Profile_icon.png"/>
         </Property>
       </Properties>
       <Events>
@@ -173,7 +182,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/bloodlink-icon.jpg"/>
+          <Image iconType="3" name="/Image/Blood Link logo (2).jpeg"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -362,7 +371,7 @@
     <Component class="javax.swing.JLabel" name="jLabel20">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/introduction.png"/>
+          <Image iconType="3" name="/Image/introduction.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -371,17 +380,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel19">
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="345" y="271" width="43" height="-1"/>
-        </Constraint>
-      </Constraints>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel21">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/latest.png"/>
+          <Image iconType="3" name="/Image/latest.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel21"/>
       </Properties>
@@ -394,7 +396,7 @@
     <Component class="javax.swing.JLabel" name="jLabel22">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/slogan.png"/>
+          <Image iconType="3" name="/Image/slogan.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -406,7 +408,7 @@
     <Component class="javax.swing.JLabel" name="jLabel23">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/white.jpg"/>
+          <Image iconType="3" name="/Image/white.jpg"/>
         </Property>
       </Properties>
       <Constraints>
