@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author VICTUS
@@ -66,7 +68,6 @@ public class CheckEligibility extends javax.swing.JFrame {
         buttonGroup8 = new javax.swing.ButtonGroup();
         buttonGroup9 = new javax.swing.ButtonGroup();
         buttonGroup10 = new javax.swing.ButtonGroup();
-        BloodLinkIcon = new javax.swing.JLabel();
         HomePage = new javax.swing.JButton();
         BloodStoriesPage = new javax.swing.JButton();
         CampaignDetailsPage = new javax.swing.JButton();
@@ -74,7 +75,6 @@ public class CheckEligibility extends javax.swing.JFrame {
         EmergencyRequestsPage = new javax.swing.JButton();
         DonatePage = new javax.swing.JButton();
         RequestPage = new javax.swing.JButton();
-        ProfileIcon = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         CheckEligibilityPage = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -111,13 +111,11 @@ public class CheckEligibility extends javax.swing.JFrame {
         No10 = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
         SubmitAnswerButton = new javax.swing.JToggleButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        BloodLinkIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bloodlink-icon.jpg"))); // NOI18N
-        getContentPane().add(BloodLinkIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 18, -1, -1));
 
         HomePage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         HomePage.setText("Home");
@@ -127,47 +125,69 @@ public class CheckEligibility extends javax.swing.JFrame {
                 HomePageActionPerformed(evt);
             }
         });
-        getContentPane().add(HomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 42, -1, -1));
+        getContentPane().add(HomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, -1, -1));
 
         BloodStoriesPage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         BloodStoriesPage.setText("Blood Stories");
         BloodStoriesPage.setBorder(null);
-        getContentPane().add(BloodStoriesPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 42, -1, -1));
+        BloodStoriesPage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BloodStoriesPageActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BloodStoriesPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, -1));
 
         CampaignDetailsPage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         CampaignDetailsPage.setText("Campaign Details");
         CampaignDetailsPage.setBorder(null);
-        getContentPane().add(CampaignDetailsPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(289, 42, -1, -1));
+        CampaignDetailsPage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampaignDetailsPageActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CampaignDetailsPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, -1, -1));
 
         BloodBanksPage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         BloodBanksPage.setText("Blood Banks");
         BloodBanksPage.setBorder(null);
-        getContentPane().add(BloodBanksPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 42, -1, -1));
+        BloodBanksPage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BloodBanksPageActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BloodBanksPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 40, -1, -1));
 
         EmergencyRequestsPage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         EmergencyRequestsPage.setText("Emergency Requests");
         EmergencyRequestsPage.setBorder(null);
-        getContentPane().add(EmergencyRequestsPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(469, 42, -1, -1));
+        EmergencyRequestsPage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmergencyRequestsPageActionPerformed(evt);
+            }
+        });
+        getContentPane().add(EmergencyRequestsPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, -1, -1));
 
         DonatePage.setBackground(new java.awt.Color(255, 0, 0));
         DonatePage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         DonatePage.setForeground(new java.awt.Color(255, 255, 255));
         DonatePage.setText("Donate");
+        DonatePage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DonatePageActionPerformed(evt);
+            }
+        });
         getContentPane().add(DonatePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 35, 90, 31));
 
         RequestPage.setBackground(new java.awt.Color(255, 0, 0));
         RequestPage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         RequestPage.setForeground(new java.awt.Color(255, 255, 255));
         RequestPage.setText("Request");
-        getContentPane().add(RequestPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(693, 35, 88, 31));
-
-        ProfileIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Profile_icon.png"))); // NOI18N
-        ProfileIcon.addActionListener(new java.awt.event.ActionListener() {
+        RequestPage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ProfileIconActionPerformed(evt);
+                RequestPageActionPerformed(evt);
             }
         });
-        getContentPane().add(ProfileIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(793, 35, 32, -1));
+        getContentPane().add(RequestPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(693, 35, 88, 31));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -345,7 +365,7 @@ public class CheckEligibility extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(Question1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(Yes1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(No1)
@@ -416,6 +436,11 @@ public class CheckEligibility extends javax.swing.JFrame {
         SubmitAnswerButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         SubmitAnswerButton.setForeground(new java.awt.Color(255, 255, 255));
         SubmitAnswerButton.setText("SUBMIT");
+        SubmitAnswerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubmitAnswerButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -436,20 +461,26 @@ public class CheckEligibility extends javax.swing.JFrame {
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, -1, -1));
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/white.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 570));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Blood Link logo (2).jpeg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 110, 40));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Profile_icon.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 40, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void HomePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomePageActionPerformed
         // TODO add your handling code here:
+        Dashboard dashboard=new Dashboard();
+         dashboard.setVisible(true);
     }//GEN-LAST:event_HomePageActionPerformed
-
-    private void ProfileIconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfileIconActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ProfileIconActionPerformed
 
     private void Yes6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Yes6ActionPerformed
         // TODO add your handling code here:
@@ -462,6 +493,82 @@ public class CheckEligibility extends javax.swing.JFrame {
     private void Yes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Yes1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Yes1ActionPerformed
+
+    private void SubmitAnswerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitAnswerButtonActionPerformed
+        // TODO add your handling code here:
+        
+    StringBuilder reasons = new StringBuilder();
+
+    if (Yes1.isSelected()) reasons.append("- You have donated blood recently.\n");
+    if (Yes2.isSelected()) reasons.append("- You had a recent illness or fever.\n");
+    if (Yes3.isSelected()) reasons.append("- You have/had serious medical conditions.\n");
+    if (Yes4.isSelected()) reasons.append("- You had surgeries or blood transfusions recently.\n");
+    if (Yes5.isSelected()) reasons.append("- You traveled to high-risk countries recently.\n");
+    if (Yes6.isSelected()) reasons.append("- You had tattoos, piercings, or acupuncture recently.\n");
+    if (Yes7.isSelected()) reasons.append("- You had unprotected sex with new/multiple partners.\n");
+    if (Yes8.isSelected()) reasons.append("- You are pregnant or recently gave birth.\n");
+    if (Yes9.isSelected()) reasons.append("- You are currently breastfeeding.\n");
+    if (Yes10.isSelected()) reasons.append("- You are currently taking medications.\n");
+
+    if (reasons.length() > 0) {
+        JOptionPane.showMessageDialog(this,
+            "You are not eligible to donate blood because of the following reasons:\n\n" + reasons,
+            "Not Eligible",
+            JOptionPane.WARNING_MESSAGE);
+    } else {
+        // All answers are "No" - eligible to proceed
+        // Replace `new NextPage().setVisible(true);` with your target form
+        JOptionPane.showMessageDialog(this, "You are eligible to donate blood!", "Eligible", JOptionPane.INFORMATION_MESSAGE);
+        this.dispose();
+        // Example: navigate to DonatePage
+        // new DonatePage().setVisible(true);
+    }
+
+
+    }//GEN-LAST:event_SubmitAnswerButtonActionPerformed
+
+    private void BloodStoriesPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BloodStoriesPageActionPerformed
+        // TODO add your handling code here:
+        Blood_Stories stories=new Blood_Stories();
+         stories.setVisible(true);
+    }//GEN-LAST:event_BloodStoriesPageActionPerformed
+
+    private void CampaignDetailsPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampaignDetailsPageActionPerformed
+        // TODO add your handling code here:
+        CampaignDetails campaign=new CampaignDetails();
+        campaign.setVisible(true);
+    }//GEN-LAST:event_CampaignDetailsPageActionPerformed
+
+    private void BloodBanksPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BloodBanksPageActionPerformed
+        // TODO add your handling code here:
+        
+BloodBanks banks=new BloodBanks();
+        banks.setVisible(true);
+    }//GEN-LAST:event_BloodBanksPageActionPerformed
+
+    private void EmergencyRequestsPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmergencyRequestsPageActionPerformed
+        // TODO add your handling code here:
+        EmergencyRequest emergency=new EmergencyRequest();
+        emergency.setVisible(true);
+    }//GEN-LAST:event_EmergencyRequestsPageActionPerformed
+
+    private void DonatePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DonatePageActionPerformed
+        // TODO add your handling code here:
+        Login login=new Login();
+        login.setVisible(true);
+    }//GEN-LAST:event_DonatePageActionPerformed
+
+    private void RequestPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RequestPageActionPerformed
+        // TODO add your handling code here:
+        request Request=new request();
+        Request.setVisible(true);
+    }//GEN-LAST:event_RequestPageActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Profile profile=new Profile();
+        profile.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -514,7 +621,6 @@ public class CheckEligibility extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BloodBanksPage;
-    private javax.swing.JLabel BloodLinkIcon;
     private javax.swing.JButton BloodStoriesPage;
     private javax.swing.JButton CampaignDetailsPage;
     private javax.swing.JLabel CheckEligibilityPage;
@@ -531,7 +637,6 @@ public class CheckEligibility extends javax.swing.JFrame {
     private javax.swing.JRadioButton No7;
     private javax.swing.JRadioButton No8;
     private javax.swing.JRadioButton No9;
-    private javax.swing.JButton ProfileIcon;
     private javax.swing.JLabel Question1;
     private javax.swing.JLabel Question10;
     private javax.swing.JLabel Question2;
@@ -564,7 +669,8 @@ public class CheckEligibility extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup7;
     private javax.swing.ButtonGroup buttonGroup8;
     private javax.swing.ButtonGroup buttonGroup9;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
