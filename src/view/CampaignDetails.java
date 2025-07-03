@@ -1,20 +1,52 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
-/**
- *
- * @author VICTUS
- */
+import Dao.CampaignDao;
+import model.Campaign;
+import javax.swing.*;
+import java.awt.*;
+import java.util.List;
+
 public class CampaignDetails extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CampaignDetails
-     */
     public CampaignDetails() {
         initComponents();
+        loadCampaigns();  // Load campaigns dynamically
+    }
+
+    // Method to load campaigns dynamically into jPanel2
+    public void loadCampaigns() {
+        jPanel2.removeAll();
+        jPanel2.setLayout(new BoxLayout(jPanel2, BoxLayout.Y_AXIS));
+
+        List<Campaign> campaigns = CampaignDao.getAllCampaigns();
+
+        for (Campaign c : campaigns) {
+            JPanel panel = new JPanel();
+            panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+            panel.setBorder(BorderFactory.createLineBorder(Color.GRAY));
+            panel.setBackground(new Color(240, 240, 240));
+            panel.setMaximumSize(new Dimension(800, 120));  // Fix max height
+
+            JLabel nameLabel = new JLabel("Campaign Name: " + c.getName());
+            JLabel dayLabel = new JLabel("Day: " + c.getDay());
+            JLabel dateLabel = new JLabel("Date: " + c.getDate());
+            JLabel locationLabel = new JLabel("Location: " + c.getLocation());
+
+            
+
+            panel.add(nameLabel);
+            panel.add(dayLabel);
+            panel.add(dateLabel);
+            panel.add(locationLabel);
+            
+            
+
+            jPanel2.add(panel);
+            jPanel2.add(Box.createVerticalStrut(10));  // Vertical spacing between campaigns
+        }
+
+        jPanel2.revalidate();
+        jPanel2.repaint();
     }
 
     /**
@@ -26,7 +58,6 @@ public class CampaignDetails extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         HomePage = new javax.swing.JToggleButton();
         BloodStoriesPage = new javax.swing.JToggleButton();
         CampaignDetailsPage = new javax.swing.JToggleButton();
@@ -37,56 +68,30 @@ public class CampaignDetails extends javax.swing.JFrame {
         ProfilePage = new javax.swing.JToggleButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bloodlink-icon.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 15, 121, -1));
-
         HomePage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         HomePage.setText("Home");
         HomePage.setBorder(null);
-        getContentPane().add(HomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 46, -1, -1));
+        HomePage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HomePageActionPerformed(evt);
+            }
+        });
+        getContentPane().add(HomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 46, 40, -1));
 
         BloodStoriesPage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         BloodStoriesPage.setText("Blood Stories");
         BloodStoriesPage.setBorder(null);
+        BloodStoriesPage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BloodStoriesPageActionPerformed(evt);
+            }
+        });
         getContentPane().add(BloodStoriesPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 46, -1, -1));
 
         CampaignDetailsPage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -97,26 +102,51 @@ public class CampaignDetails extends javax.swing.JFrame {
         BloodBanksPage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         BloodBanksPage.setText("Blood Banks");
         BloodBanksPage.setBorder(null);
+        BloodBanksPage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BloodBanksPageActionPerformed(evt);
+            }
+        });
         getContentPane().add(BloodBanksPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 46, -1, -1));
 
         EmergencyRequests.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         EmergencyRequests.setText("Emergency Requests");
         EmergencyRequests.setBorder(null);
+        EmergencyRequests.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmergencyRequestsActionPerformed(evt);
+            }
+        });
         getContentPane().add(EmergencyRequests, new org.netbeans.lib.awtextra.AbsoluteConstraints(464, 46, 120, -1));
 
         DonatePage.setBackground(new java.awt.Color(255, 0, 0));
         DonatePage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         DonatePage.setForeground(new java.awt.Color(255, 255, 255));
         DonatePage.setText("Donate");
+        DonatePage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DonatePageActionPerformed(evt);
+            }
+        });
         getContentPane().add(DonatePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(586, 39, 91, 32));
 
         RequestPage.setBackground(new java.awt.Color(255, 0, 0));
         RequestPage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         RequestPage.setForeground(new java.awt.Color(255, 255, 255));
         RequestPage.setText("Request");
+        RequestPage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RequestPageActionPerformed(evt);
+            }
+        });
         getContentPane().add(RequestPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 39, 91, 32));
 
-        ProfilePage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Profile_icon.png"))); // NOI18N
+        ProfilePage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Profile_icon.png"))); // NOI18N
+        ProfilePage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProfilePageActionPerformed(evt);
+            }
+        });
         getContentPane().add(ProfilePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(786, 39, 33, -1));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -125,237 +155,70 @@ public class CampaignDetails extends javax.swing.JFrame {
         jLabel2.setText("Campaign Details");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 83, -1, 37));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel3.setText(" 1. Campaign Name: \"Red Hope Kathmandu\"");
-
-        jLabel4.setText("Location: Basantapur Durbar Square");
-
-        jLabel5.setText("Day: Saturday");
-
-        jLabel6.setText("Date: June 8, 2025");
-
-        jLabel7.setText("2. Campaign Name: \"Drop for Life Drive\"");
-
-        jLabel8.setText("Location: Bhrikutimandap Exhibition Hall");
-
-        jLabel9.setText("Day: Friday");
-
-        jLabel10.setText("Date: July 12, 2025");
-
-        jLabel11.setText("3. Campaign Name: \"Kathmandu Cares: Blood Connect 2025\"");
-
-        jLabel12.setText("Location: Patan Durbar Square, Lalitpur");
-
-        jLabel13.setText("Day: Sunday");
-
-        jLabel14.setText("Date: August 3, 2025");
-
-        jLabel15.setText(" 4. Campaign Name: \"Pulse of the City\"");
-
-        jLabel16.setText("Location: Ratna Park Community Center");
-
-        jLabel17.setText("Day: Wednesday");
-
-        jLabel18.setText("Date: September 17, 2025");
-
-        jLabel19.setText(" 5. Campaign Name: \"Youth for Blood – Save a Soul\"");
-
-        jLabel20.setText("Location: Tribhuvan University, Kirtipur Campus");
-
-        jLabel21.setText("Day: Monday");
-
-        jLabel22.setText("Date: October 6, 2025");
-
-        jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel23.setText("Donate Outside Kathmandu");
-
-        jLabel24.setText("1. Campaign Name: \"Birat Blood Bridge\"");
-
-        jLabel25.setText("Location: Mahendra Chowk, Biratnagar");
-
-        jLabel26.setText("Day: Sunday");
-
-        jLabel27.setText("Date: June 15, 2025");
-
-        jLabel28.setText(" 2. Campaign Name: \"Pokhara Pulse: Blood for All\"");
-
-        jLabel29.setText("Location: Lakeside Park, Pokhara");
-
-        jLabel30.setText("Day: Saturday");
-
-        jLabel31.setText("Date: July 20, 2025");
-
-        jLabel32.setText(" 3. Campaign Name: \"Lumbini Life Drop\"");
-
-        jLabel33.setText("Location: Maya Devi Temple Grounds, Lumbini");
-
-        jLabel34.setText("Day: Friday");
-
-        jLabel35.setText("Date: August 16, 2025");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel27))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel33)
-                    .addComponent(jLabel34)
-                    .addComponent(jLabel35))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(252, 252, 252)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(191, 191, 191)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel19)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addGap(14, 14, 14)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel8)
-                                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel20)
-                                    .addComponent(jLabel21)
-                                    .addComponent(jLabel22))
-                                .addGap(15, 15, 15))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel24)
-                                .addGap(216, 216, 216)
-                                .addComponent(jLabel32))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(498, 498, 498))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel30))))
-                .addContainerGap(156, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(312, 312, 312)
-                .addComponent(jLabel23)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 848, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel15))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel17))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel18))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel19))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel20))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel21))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel22))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel14)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel23)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel24)
-                    .addComponent(jLabel32))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel33))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel26)
-                    .addComponent(jLabel34))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel27)
-                    .addComponent(jLabel35))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel28)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel29)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel30)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel31)
-                .addContainerGap(34, Short.MAX_VALUE))
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 418, Short.MAX_VALUE)
         );
 
-        jScrollPane1.setViewportView(jPanel1);
+        jScrollPane1.setViewportView(jPanel2);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 850, 420));
 
-        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/white.jpg"))); // NOI18N
-        jLabel36.setText("jLabel36");
-        getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 560));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/bloodlink-icon.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 120, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void HomePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomePageActionPerformed
+        // TODO add your handling code here:
+        Dashboard dashboard=new Dashboard();
+         dashboard.setVisible(true);
+    }//GEN-LAST:event_HomePageActionPerformed
+
+    private void BloodStoriesPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BloodStoriesPageActionPerformed
+        // TODO add your handling code here:
+        Blood_Stories stories=new Blood_Stories();
+         stories.setVisible(true);
+    }//GEN-LAST:event_BloodStoriesPageActionPerformed
+
+    private void BloodBanksPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BloodBanksPageActionPerformed
+        // TODO add your handling code here:
+        BloodBanks banks=new BloodBanks();
+        banks.setVisible(true);
+    }//GEN-LAST:event_BloodBanksPageActionPerformed
+
+    private void EmergencyRequestsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmergencyRequestsActionPerformed
+        // TODO add your handling code here:
+        EmergencyRequest emergency=new EmergencyRequest();
+        emergency.setVisible(true);
+    }//GEN-LAST:event_EmergencyRequestsActionPerformed
+
+    private void DonatePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DonatePageActionPerformed
+        // TODO add your handling code here:
+        Login login=new Login();
+        login.setVisible(true);
+    }//GEN-LAST:event_DonatePageActionPerformed
+
+    private void RequestPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RequestPageActionPerformed
+        // TODO add your handling code here:
+        
+request Request=new request();
+        Request.setVisible(true);
+    }//GEN-LAST:event_RequestPageActionPerformed
+
+    private void ProfilePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfilePageActionPerformed
+        // TODO add your handling code here:
+        
+Profile profile=new Profile();
+        profile.setVisible(true);
+    }//GEN-LAST:event_ProfilePageActionPerformed
 
     /**
      * @param args the command line arguments
@@ -403,42 +266,8 @@ public class CampaignDetails extends javax.swing.JFrame {
     private javax.swing.JToggleButton ProfilePage;
     private javax.swing.JToggleButton RequestPage;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
