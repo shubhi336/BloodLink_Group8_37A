@@ -21,9 +21,9 @@ public class User {
     // Constructor(s)
     public User() {}
 
-    public User(String email, String username, String password, String phone, String address, String gender, String bloodGroup, String medicalHistory) {
-        this.email = email;
+    public User(String username, String email, String password, String phone, String address, String gender, String bloodGroup, String medicalHistory) {
         this.username = username;
+        this.email = email;
         this.password = password;
         this.phone = phone;
         this.address = address;

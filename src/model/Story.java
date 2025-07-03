@@ -10,18 +10,31 @@ import Dao.StoryDao;
  * @author ACER
  */
 public class Story {
+    private String username;
     private String email;
+    private String phone;
     private String story;
     
-    public Story(String email, String story){
+    
+    public Story(String username,String email,String phone, String story){
+        this.username=username;
         this.email=email;
+        this.phone=phone;
         this.story=story;
     }
-    public String getEmail(){
+    public String getusername(){
+        return username ;
+    }
+    
+    public String getemail(){
         return email;
     }
     
-    public String getStroy(){
+    public String getphone(){
+        return phone;
+    }
+    
+    public String getstory(){
         return story;
     }
     
